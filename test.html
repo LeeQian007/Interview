@@ -18,5 +18,24 @@
   </head>
   <body>
     <button class="btn">hey</button>
+    <script>
+      const promise1 = new Promise((resolve) =>
+        setTimeout(() => resolve("Promise 1"), 1000)
+      );
+      const promise2 = new Promise((resolve) =>
+        setTimeout(() => resolve("Promise 2"), 2000)
+      );
+      const promise3 = new Promise((resolve, reject) =>
+        setTimeout(() => resolve("Promise 3 Error"), 1500)
+      );
+
+      Promise.all([promise1, promise2, promise3])
+        .then((values) => {
+          console.log("All promises resolved:", values[0]);
+        })
+        .catch((error) => {
+          console.error("At least one promise rejected:", error);
+        });
+    </script>
   </body>
 </html>
