@@ -4,38 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      .btn::after {
-        content: "click";
-        position: absolute;
-        top: 0px;
-        left: 0px;
-      }
-      /* .btn {
-        position: relative;
-      } */
-    </style>
   </head>
   <body>
-    <button class="btn">hey</button>
     <script>
-      const promise1 = new Promise((resolve) =>
-        setTimeout(() => resolve("Promise 1"), 1000)
-      );
-      const promise2 = new Promise((resolve) =>
-        setTimeout(() => resolve("Promise 2"), 2000)
-      );
-      const promise3 = new Promise((resolve, reject) =>
-        setTimeout(() => resolve("Promise 3 Error"), 1500)
-      );
-
-      Promise.all([promise1, promise2, promise3])
-        .then((values) => {
-          console.log("All promises resolved:", values[0]);
-        })
-        .catch((error) => {
-          console.error("At least one promise rejected:", error);
-        });
+      class test {
+        name = "hey";
+      }
+      console.log(test);
     </script>
   </body>
 </html>
