@@ -1,17 +1,18 @@
 function myInstanceof(target, origin) {
   origin = origin.prototype;
-  target = target.__prototype__;
+  target = Object.getPrototypeOf(target);
 
   while (true) {
+    // 往原型链上面找到顶了，但是还是没有找到
     if (target === null) {
       return false;
     }
 
+    // 找到了
     if (target === origin) {
       return true;
     }
-    console.log(target);
-    target = target.__prototype__;
+    target = Object.getPrototypeOf(target);
   }
 }
 
