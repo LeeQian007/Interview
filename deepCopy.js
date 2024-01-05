@@ -1,13 +1,14 @@
 // 递归的方式
 function deepCopy(obj) {
-  if (!obj || typeof obj === "undefined") return;
+  if (typeof obj === "object" && obj != null) {
+    // typeof null --> object
+    let cloneTarget = Array.isArray(obj) ? [] : {};
 
-  let deepCopy = Array.isArray(obj) ? [] : {};
-
-  for (let key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      deepCopy[key] =
-        typeof obj[key] === "object" ? deepClone(obj[key]) : obj[key];
+    for (let key in obj) {
+      cloneTarget[key] = deepCopy(obj[key]);
     }
+    return cloneTarget;
+  } else {
+    return obj;
   }
 }

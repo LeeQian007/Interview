@@ -4,15 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      div {
-        transform: matrix();
-      }
-    </style>
   </head>
+  <style></style>
   <body>
-    <input type="text" value="hello" />
-    <input type="submit" />
-    <input type="file" name="" id="" />
+    <form
+      id="loginForm"
+      style="display: flex; flex-direction: column; width: 200px; gap: 6px"
+    >
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="un" placeholder="username" />
+      <label for="password">Password:</label>
+      <input type="password" name="password2" id="pwd" placeholder="pwd" />
+      <button type="submit" id="login-btn">login</button>
+    </form>
+    <script>
+      // const json = JSON.stringify({ name: "json", age: 20 });
+      // console.log(json);
+      // console.log(Object.keys(json).length);
+
+      const loginButton = document.querySelector("#login-btn");
+
+      let times = 0;
+
+      loginButton.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const form = new FormData();
+        const pwd = document.querySelector("#pwd").value;
+        form.append("name", document.querySelector("#un").value);
+        form.append("pwd", document.querySelector("#pwd").value);
+
+        if (pwd !== 123) {
+          times++;
+          console.log("wrong pw");
+        }
+        console.log(times);
+      });
+
+      const pwd = document.querySelector("#pwd");
+    </script>
   </body>
 </html>
