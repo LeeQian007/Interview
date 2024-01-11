@@ -4,7 +4,7 @@ function dayOfYear(dataString) {
   const startYear = new Date(date.getFullYear(), 0, 0);
 
   // date:2020-01-09  -  date:2020-01-01  =  9 days
-  const diff = date - start;
+  const diff = date - startYear;
 
   const oneDay = 24 * 60 * 60 * 1000;
 

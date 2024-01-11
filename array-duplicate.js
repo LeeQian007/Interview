@@ -7,7 +7,3 @@ console.log(uniqueArray);
 let uniqueArray2 = array.filter((value, index, self) => {
   return self.indexOf(value) === index;
 });
-
-// let uniqueArray3 = array.filter((value, index, self) => {
-//   return self.indexOf(value) === index;
-// });

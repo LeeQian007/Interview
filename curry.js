@@ -5,16 +5,15 @@
 
 // const add = (x) => (y) => (z) => x + y + z;
 
-const curry = (fn, ...args) =>
-  args.length >= fn.length
+function curry(fn, ...args) {
+  return args.length >= fn.length
     ? fn(...args)
     : (..._args) => curry(fn, ...args, ..._args);
+}
 
 function add(x, y, z) {
   return x + y + z;
 }
 
-console.log(curry(add));
-
-const addCurry = curry(add);
-console.log(addCurry(1, 2)(3));
+const newCurryFn = curry(add);
+console.log(newCurryFn(1, 2)(3));

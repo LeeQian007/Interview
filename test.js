@@ -1,4 +1,3 @@
-// Array.from({ length: 10 });
+const y = new Boolean(false);
 
-const MyObj = { length: 10 };
-console.log(MyObj);
+console.log(y);
