@@ -2,7 +2,7 @@ function findTheMostFrequentLetter(str) {
   let counter = {};
 
   // 1. pre-format
-  const lowerCaseWithoutSpace = str.toLowerCase.replace(/\s/g, ""); // ijustwannasay
+  const lowerCaseWithoutSpace = str.toLowerCase().replace(/\s/g, ""); // ijustwannasay
 
   // 2. loop to make the counter
   for (const char of lowerCaseWithoutSpace) {
@@ -10,12 +10,12 @@ function findTheMostFrequentLetter(str) {
   }
 
   // 3. loop the counter to find the Most Frequent Letter
-  const maxCount = 0;
-  const theMostFrequentLetter = "";
-  for (const letter of counter) {
+  let maxCount = 0;
+  let theMostFrequentLetter = "";
+  for (let letter in counter) {
     if (counter[letter] > maxCount) {
       maxCount = counter[letter];
-      theMostFrequentLetter = o;
+      theMostFrequentLetter = letter;
     }
   }
 

@@ -1,3 +1,2 @@
-const y = new Boolean(false);
-
-console.log(y);
+const arr = [1, 2];
+arr.flat();

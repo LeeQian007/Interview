@@ -7,7 +7,7 @@ const lengthenOf = function (substring) {
 
   for (let right = 0; right < substring.length; right++) {
     while (charSet.has(substring.charAt(right))) {
-      charSet.delete(substring.charAt[left]);
+      charSet.delete(substring.charAt(left));
       left += 1;
     }
     charSet.add(substring.charAt(right));

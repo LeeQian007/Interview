@@ -4,18 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
-  <body>
-    <script>
-      let a = 0;
-      function paint(timmy) {
-        console.log(timmy);
-        a++;
-        console.log(a);
-        requestAnimationFrame(paint);
+    <!-- number string boolean  null undefined symbol -->
+    <style>
+      .tri::before {
+        top: -20px;
+        content: "";
+        width: 0;
+        height: 0;
+        border-bottom: 20px solid black;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        position: absolute;
       }
-      paint();
-      // window.requestAnimationFrame()
-    </script>
+      .tri::after {
+        bottom: -20px;
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: 20px solid black;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        position: absolute;
+      }
+      .tri {
+        margin-top: 100px;
+        width: 20px;
+        height: 20px;
+        background-color: pink;
+        position: relative;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tri"></div>
   </body>
 </html>
