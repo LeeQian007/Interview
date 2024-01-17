@@ -8,5 +8,6 @@ const reverseLink = (head) => {
     prev = curr;
     curr = nxt;
   }
+
   return prev;
 };
